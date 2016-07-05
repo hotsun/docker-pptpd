@@ -8,7 +8,7 @@ The Point-to-Point Tunneling Protocol (PPTP) is a method for implementing virtua
 ## Usage:
 git clone this repo
 ```
-git clone https://github.com/hotsun/docker-pptpd ~/
+git clone https://github.com/hotsun/docker-pptpd ~/docker-pptpd
 ```
 
 Update/Create new user
