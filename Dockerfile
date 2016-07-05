@@ -32,4 +32,6 @@ RUN sed -i 's/^net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/g' /etc/sysctl.co
 # Enable iptables
 #RUN ufw enable
 
+EXPOSE 1723
+
 CMD ["/usr/sbin/pptpd", "-f"]
