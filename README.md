@@ -2,7 +2,8 @@
 The Point-to-Point Tunneling Protocol (PPTP) is a method for implementing virtual private networks. PPTP uses a control channel over TCP and a GRE tunnel operating to encapsulate PPP packets.
 
 ## Requirement:
-- docker version > 1.9
+- docker version > 1.10.0
+- docker compose version > 1.6.0  (using docker compose version 2)
 - 1723 port is open for docker host
 
 ## Usage:
