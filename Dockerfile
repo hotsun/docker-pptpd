@@ -10,14 +10,16 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install software requirements
 RUN apt-get update && \
-    BUILD_PACKAGES="pptpd" && \
+    BUILD_PACKAGES="pptpd iptables" && \
     apt-get -y install $BUILD_PACKAGES
 
 # Add server and client IP
-RUN echo -e "localip 192.168.0.1\nremoteip 192.168.0.100-200" >> /etc/pptpd.conf
+RUN echo "localip 192.168.0.1" >> /etc/pptpd.conf
+RUN echo "remoteip 192.168.0.100-200" >> /etc/pptpd.conf
 
 # Configure DNS server
-RUN echo -e "ms-dns 8.8.8.8\nms-dns 8.8.4.4" >> /etc/ppp/pptpd-options
+RUN echo "ms-dns 8.8.8.8" >> /etc/ppp/pptpd-options
+RUN echo "ms-dns 8.8.4.4" >> /etc/ppp/pptpd-options
 
 # Disable logwtmp
 RUN sed -i 's/^logwtmp/#logwtmp/g' /etc/pptpd.conf
