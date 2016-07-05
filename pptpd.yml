@@ -2,7 +2,7 @@ version: '2'
 services:
   pptpd:
     image: "hotsun/pptpd-server"
-    name: "pptpd-server"
+    container_name: "pptpd-server"
     restart: "on-failure:10"
     network_mode: "bridge"
     ports:
